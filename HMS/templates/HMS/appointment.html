@@ -1,0 +1,44 @@
+{% extends 'HMS/base.html' %}
+{% load static %}
+{% block title %} APPOINTMENT {% endblock title %}
+
+    {% block body %} 
+<html>
+     <body>
+     <form method="post">
+          {% csrf_token %}
+    <div>
+         <!-- MAKE AN APPOINTMENT -->
+     <section id="appointment" data-stellar-background-ratio="3">
+        <div class="container">
+             <div class="row">
+
+                  <div class="col-md-6 col-sm-6">
+                       <img src="{% static 'HMS/images/appointment-image.jpg' %}" class="img-responsive" alt="">
+                  </div>
+                  
+                  <h3>APPOINTMENT</h3>
+                    <div>
+                         <table border="3">
+                         {{form}}
+                    <tr>
+                         <td colspan="2">
+                              <button type="submit">Submit</button>
+                         </td>
+                    </tr>   
+                    <tr>
+                         <td colspan="2">
+                              <h3 style="color:green;">{{msg}}</h3>
+                         </td>
+                    </tr>  
+                    </table>
+
+                    </div>
+               </div>
+          </div>
+   </section>
+    </div>
+</form>
+</body>
+    </html>
+{% endblock body %}
